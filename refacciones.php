@@ -6,12 +6,19 @@ $password = "Uyjt3095?";
 $baseDatos = "citastw";
 $ssl="C:\Users\Marcos Pacab\Documents\DigiCertGlobalRootCA.crt.pem"; //ruta del archivo SSL
 
-$mysqli = mysqli_init();
+try {
+    // Opciones de conexión con SSL
+    $options = [
+        PDO::MYSQL_ATTR_SSL_CA => $ssl,
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Para errores más claros
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    ];
 
-mysqli_ssl_set($mysqli, NULL, NULL, $ssl, NULL, NULL);
-
-if (!mysqli_real_connect($mysqli, $servidor, $usuario, $password, $baseDatos, 3306, NULL, MYSQLI_CLIENT_SSL)) {
-    die("Error de conexión: " . mysqli_connect_error());
+    // Conexión PDO
+    $dsn = "mysql:host=$servidor;dbname=$baseDatos;port=3306;charset=utf8mb4";
+    $pdo = new PDO($dsn, $usuario, $password, $options);
+}catch(PDOException $e){
+    die("Error de conexión o ejecución: " . $e->getMessage());
 }
 ?>
 <html lang="en">
@@ -50,15 +57,16 @@ if (!mysqli_real_connect($mysqli, $servidor, $usuario, $password, $baseDatos, 33
         
     </tr>
     <?php
-    $resultado = mysqli_query($mysqli, 'SELECT * FROM refaccion');
-    while ($tupla = mysqli_fetch_assoc($resultado)) {
-        echo "<tr>";
-        foreach ($tupla as $valor) {
-            echo "<td>$valor</td>";
+        $sql="SELECT * FROM refaccion";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(); //ejecuta la consulta
+        while ($tupla = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<tr>";
+            foreach ($tupla as $valor) {
+                echo "<td>$valor</td>";
+            }
+            echo "</tr>";
         }
-        echo "</tr>";
-    }
-
     ?>
 </table>
 </body>
