@@ -4,8 +4,11 @@ $servidor = "server-ejemplo.mysql.database.azure.com";
 $usuario = "benjamin";
 $password = "Uyjt3095?";
 $baseDatos = "citastw";
-$ssl="C:\Users\Marcos Pacab\Documents\DigiCertGlobalRootCA.crt.pem"; //ruta del archivo SSL
+$ssl="C:/Users/Marcos Pacab/Documents/DigiCertGlobalRootCA.crt.pem"; //ruta del archivo SSL
 
+if (!file_exists($ssl)) {
+    die("Archivo de certificado no encontrado en: $ssl");
+}
 try {
     // Opciones de conexión con SSL
     $options = [
