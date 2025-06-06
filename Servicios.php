@@ -4,7 +4,7 @@ $servidor = "server-ejemplo.mysql.database.azure.com";
 $usuario = "benjamin";
 $password = "Uyjt3095?";
 $baseDatos = "citastw";
-$ssl="C:\Users\Marcos Pacab\Documents\DigiCertGlobalRootCA.crt.pem"; //ruta del archivo SSL
+$ssl="DigiCertGlobalRootCA.crt.pem"; //ruta del archivo SSL
 
 $mysqli = mysqli_init();
 
