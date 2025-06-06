@@ -1,0 +1,102 @@
+h1{
+    font-family: "Raleway", sans-serif;
+    font-style:normal;
+    font-size: 25px;
+    padding-left: 10px;
+}
+h2{
+    font-family: "Raleway", sans-serif;
+    font-style:normal;
+    font-size: 25px;
+    padding-left: 10px;
+}
+p{
+    font-family: "Raleway", sans-serif;
+    font-style:normal;
+    font-size:large;
+    padding-left: 10px;
+}
+a{
+    font-family: "Raleway", sans-serif;
+    font-style:normal;
+    padding-left: 30px;
+    text-decoration: none;
+    color: black;
+}
+nav a{
+    font-weight: 600;
+    padding-right: 60px;
+}
+nav a:hover{
+    color: darkgray;
+}
+
+header{
+    display: flex;
+    min-height: 100px;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    display: flex;
+}
+.logo img{
+    height: 80px;
+    align-items: center;
+    margin-left: 10px;
+}
+
+@media (max-width:1080px){
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px 0px;
+    }
+}
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select {
+    width: 80%;
+    font-family: "Raleway", sans-serif;
+    padding: 10px;
+    border: 1px solid #b30000;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+input::placeholder {
+    color: #a8a8a8;
+}
+button {
+    background-color: #b30000;
+    color: white;
+    border: none;
+    width: 150px;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Ralewey", sans-serif;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #730000;
+}
+
+.Nombre, .datosServi, .datosRefac, .datosFH {
+    border: 2px solid #d4d4d4;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 2%;
+    width: 800px;
+    margin-bottom: 20px;
+    background-color: rgb(232, 232, 232);
+    box-shadow: 2px 2px 8px rgb(164, 164, 164);
+}

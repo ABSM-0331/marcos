@@ -1,0 +1,75 @@
+h2{
+    font-family: "Raleway", sans-serif;
+    font-style:normal;
+    font-size: 40px;
+    padding-left: 10px;
+}
+a{
+    font-family: "Raleway", sans-serif;
+    font-style:normal;
+    padding-left: 30px;
+    text-decoration: none;
+    color: black;
+}
+nav a{
+    font-weight: 600;
+    padding-right: 60px;
+}
+nav a:hover{
+    color: darkgray;
+}
+
+header{
+    display: flex;
+    min-height: 100px;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    display: flex;
+}
+.logo img{
+    height: 80px;
+    align-items: center;
+    margin-left: 10px;
+}
+@media (max-width:1080px){
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px 0px;
+    }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Raleway", sans-serif;
+  margin-top: 20px;
+}
+
+th {
+  border: 1px solid black;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+td{
+  border: 1px solid black;
+  color: black;
+  padding: 12px;
+  text-align: center;
+}
+th {
+  background-color: rgb(255, 0, 0); /* fondo claro */
+}
+
+td {
+  background-color: rgba(255, 255, 255, 0.1); /* fondo más tenue */
+}
+
+table tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
