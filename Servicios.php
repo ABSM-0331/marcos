@@ -114,7 +114,7 @@ if (isset($_POST['NombreS'])) {
             <th>Precio</th>
             <th>Categoria</th>
             <th>Vehiculo</th>
-            <th>Tamaño de vehiculo<th>
+            <th>Tamano_vehiculo</th>
           </tr>";
     while ($tupla = mysqli_fetch_assoc($resultado2)) {
         echo "<tr>";
@@ -128,7 +128,7 @@ if (isset($_POST['NombreS'])) {
 ?>
 
 <table align='center' border='1'>
-    <tr><th>ID</th><th>Servicio</th><th>Precio</th><th>Categoria</th><th>Vehiculo</th></tr>
+    <tr><th>ID</th><th>Servicio</th><th>Precio</th><th>Categoria</th><th>Vehiculo</th><th>Tamano_vehiculo</th></tr>
     <?php
     $resultado = mysqli_query($mysqli, 'SELECT * FROM servicio');
     while ($tupla = mysqli_fetch_assoc($resultado)) {
