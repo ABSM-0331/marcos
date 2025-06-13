@@ -114,6 +114,7 @@ if (isset($_POST['NombreS'])) {
             <th>Precio</th>
             <th>Categoria</th>
             <th>Vehiculo</th>
+            <th>Tamaño de vehiculo<th>
           </tr>";
     while ($tupla = mysqli_fetch_assoc($resultado2)) {
         echo "<tr>";
